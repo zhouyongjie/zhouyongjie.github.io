@@ -4,10 +4,9 @@ title:      Deploy tensorflow model
 subtitle:   ckpt、pb、lite转换
 date:       2020-11-25
 author:     Yongjie
-header-img: img/post-bolg-tensorflow.png
+header-img: img/post-bg-tensorflow.png
 catalog: true
 tags:
-
     - Tensorflow
 	- deploy model
 ---

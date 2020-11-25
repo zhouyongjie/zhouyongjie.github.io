@@ -4,7 +4,7 @@ title:      Tensorflow 模型部署
 subtitle:   ckpt、pb、lite
 date:       2020-11-26
 author:     BY
-header-img: img/post-bg-cook.jpg
+header-img: img/post-bg-tensorflow.png
 catalog: true
 tags:
     - iOS
