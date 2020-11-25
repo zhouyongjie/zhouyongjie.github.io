@@ -1,14 +1,13 @@
 ---
 layout:     post
 title:      Tensorflow 模型部署
-subtitle:   ckpt、pb、lite转换
-date:       2020-11-25
+subtitle:   ckpt、pb、lite
+date:       2020-11-26
 author:     BY
-header-img: img/post-bolg-tensorflow.png
+header-img: img/post-bg-cook.jpg
 catalog: true
 tags:
-    - Tensorflow
-	- deploy model
+    - iOS
 ---
 
 ## 前言
