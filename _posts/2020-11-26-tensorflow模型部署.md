@@ -7,7 +7,8 @@ author:     BY
 header-img: img/post-bg-tensorflow.png
 catalog: true
 tags:
-    - iOS
+    - Tensorflow
+	- deploy model
 ---
 
 ## 前言
