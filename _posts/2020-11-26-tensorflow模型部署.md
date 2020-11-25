@@ -8,7 +8,6 @@ header-img: img/post-bg-tensorflow.png
 catalog: true
 tags:
     - Tensorflow
-	- deploy model
 ---
 
 ## 前言
