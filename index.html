@@ -401,9 +401,25 @@
 </div><!-- /wrap -->
 
 <!-- ═══ FOOTER ═══ -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <footer>
   <span>© 2026 Yongjie Zhou. Last updated June 2026.</span>
+  <span id="busuanzi_container_site_pv" style="opacity:0;transition:opacity .4s">
+    <i class="fa-regular fa-eye" style="font-size:12px"></i>
+    <span id="busuanzi_value_site_pv"></span> views
+    &nbsp;·&nbsp;
+    <i class="fa-regular fa-user" style="font-size:12px"></i>
+    <span id="busuanzi_value_site_uv"></span> visitors
+  </span>
 </footer>
+<script>
+  /* Fade in the counter once busuanzi populates it */
+  const _bszObserver = new MutationObserver(() => {
+    const el = document.getElementById('busuanzi_container_site_pv');
+    if (el && el.style.display !== 'none') { el.style.opacity = '1'; _bszObserver.disconnect(); }
+  });
+  _bszObserver.observe(document.body, { subtree: true, childList: true, attributes: true });
+</script>
 
 </body>
 </html>
