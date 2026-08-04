@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yongjie Zhou</title>
-  <meta name="description" content="Academic homepage of Yongjie Zhou (周永杰) — PhD student in [your field]." />
+  <meta name="description" content="Academic homepage of Yongjie Zhou (周永杰) — PhD student at ielab, the University of Queensland, working on Agent Memory and Agent Information Retrieval." />
 
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -134,9 +134,8 @@
     .news-item {
       display: grid; grid-template-columns: 86px 1fr;
       gap: 12px; padding: 7px 0;
-      border-top: 1px solid #f2f2f2; font-size: 14px;
+      font-size: 14px;
     }
-    .news-item:first-child { border-top: none; }
     .news-date { color: var(--muted); font-size: 13px; padding-top: 1px; }
     .news-text { color: var(--soft); }
     .news-text strong { color: var(--text); }
@@ -157,13 +156,14 @@
     }
     .pub:first-of-type { border-top: none; }
     .pub-thumb {
-      width: 240px; height: 160px;
-      border-radius: 4px; background: #f0f0f0;
+      width: 240px;
+      border-radius: 4px; background: #fff;
       flex-shrink: 0; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
       font-size: 11px; color: #bbb; border: 1px solid var(--rule);
     }
-    .pub-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    /* contain, not cover — publication figures are wide and must not be cropped */
+    .pub-thumb img { width: 100%; height: auto; display: block; object-fit: contain; }
     .pub-title { font-weight: 600; font-size: 14px; line-height: 1.4; margin-bottom: 3px; }
     .pub-authors { font-size: 13px; color: var(--soft); margin-bottom: 2px; }
     .pub-authors .me { font-weight: 600; color: var(--text); }
@@ -172,7 +172,7 @@
     .pub-chips a { color: var(--link); }
     @media (max-width: 500px) {
       .pub { flex-direction: column; gap: 10px; }
-      .pub-thumb { width: 100%; height: 160px; }
+      .pub-thumb { width: 100%; height: auto; }
     }
 
     /* ── Teaching ── */
@@ -296,6 +296,10 @@
     <h2 class="sec-h">News</h2>
     <ul class="news-list">
       <li class="news-item">
+        <div class="news-date">Jul 2026</div>
+        <div class="news-text">Presented our chunking taxonomy paper at <strong>SIGIR 2026</strong> in Melbourne.</div>
+      </li>
+      <li class="news-item">
         <div class="news-date">Apr 2026</div>
         <div class="news-text">Paper accepted to <strong>SIGIR 2026</strong>.</div>
       </li>
@@ -309,7 +313,7 @@
 
     <div class="pub">
       <div class="pub-thumb">
-        <img src="./assets/papers/chunking-embedding-pipeline-polished.png" alt="Chunking taxonomy figure">
+        <img src="./assets/papers/2026-sigir-chunking.png" alt="Chunking taxonomy figure">
       </div>
       <div>
         <div class="pub-title">Beyond Chunk-Then-Embed: A Comprehensive Taxonomy and Evaluation of Document Chunking Strategies for Information Retrieval</div>
@@ -318,9 +322,9 @@
         </div>
         <div class="pub-venue">SIGIR 2026 </div>
         <div class="pub-chips">
-          <a href="https://arxiv.org/pdf/2602.16974" target="_blank" rel="noopener">[PDF]</a>
-          <a href="https://arxiv.org/abs/2602.16974" target="_blank" rel="noopener">[arXiv]</a>
+          <a href="https://dl.acm.org/doi/pdf/10.1145/3805712.3808575" target="_blank" rel="noopener">[PDF]</a>
           <a href="https://github.com/ielab/Reproduce-chunking-2026" target="_blank" rel="noopener">[Code]</a>
+          <a href="./assets/slides/2026-sigir-chunking.pdf" target="_blank" rel="noopener">[Slides]</a>
         </div>
       </div>
     </div>
@@ -402,7 +406,7 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <span>© 2026 Yongjie Zhou. Last updated June 2026.</span>
+  <span>© 2026 Yongjie Zhou. Last updated August 2026.</span>
 </footer>
 
 </body>
