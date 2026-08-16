@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[31934,["/Wanderlight/_next/static/chunks/0dbhjjzl8qfwv.js","/Wanderlight/_next/static/chunks/0jcpmo0xf4nor.js"],"WanderlightApp"]
+2:I[31934,["/Wanderlight/_next/static/chunks/0dbhjjzl8qfwv.js","/Wanderlight/_next/static/chunks/09-pipe0yf78c.js"],"WanderlightApp"]
 3:I[97367,["/Wanderlight/_next/static/chunks/0dbhjjzl8qfwv.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/Wanderlight/_next/static/chunks/0jcpmo0xf4nor.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"owNfjmjqNKNex3YaM4Isd"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/Wanderlight/_next/static/chunks/09-pipe0yf78c.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"qCsqZuKtFGwsERNAlZ45v"}
 5:null

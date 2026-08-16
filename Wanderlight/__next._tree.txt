@@ -1,2 +1,2 @@
-:HL["/Wanderlight/_next/static/chunks/0b_6-f-m2czhi.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"owNfjmjqNKNex3YaM4Isd"}
+:HL["/Wanderlight/_next/static/chunks/0odzzhdvvn2ol.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"qCsqZuKtFGwsERNAlZ45v"}
