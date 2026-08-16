@@ -1,0 +1,47 @@
+[
+  {
+    "id": "published-brisbane",
+    "place": "Brisbane",
+    "visitedOn": "2026-08-12",
+    "note": "A golden afternoon by the river. The city felt soft, warm, and full of possibility.",
+    "latitude": -27.4698,
+    "longitude": 153.0251,
+    "photos": [
+      {
+        "id": "published-photo-brisbane",
+        "url": "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=85",
+        "alt": "Brisbane city beside the river"
+      }
+    ]
+  },
+  {
+    "id": "published-sydney",
+    "place": "Sydney",
+    "visitedOn": "2026-08-05",
+    "note": "Harbour air, ferry wakes, and the Opera House glowing at sunset.",
+    "latitude": -33.8688,
+    "longitude": 151.2093,
+    "photos": [
+      {
+        "id": "published-photo-sydney",
+        "url": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
+        "alt": "Sydney Harbour at sunset"
+      }
+    ]
+  },
+  {
+    "id": "published-melbourne",
+    "place": "Melbourne",
+    "visitedOn": "2026-07-28",
+    "note": "Laneways, coffee, and rain on the tram windows.",
+    "latitude": -37.8136,
+    "longitude": 144.9631,
+    "photos": [
+      {
+        "id": "published-photo-melbourne",
+        "url": "https://images.unsplash.com/photo-1514395462725-fb4566210144?auto=format&fit=crop&w=1200&q=85",
+        "alt": "Australian landscape at dusk"
+      }
+    ]
+  }
+]
