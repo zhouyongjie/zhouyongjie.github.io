@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yongjie Zhou</title>
-  <meta name="description" content="Academic homepage of Yongjie Zhou (周永杰) — PhD student at ielab, the University of Queensland, working on Agent Memory and Agent Information Retrieval." />
+  <meta name="description" content="Academic homepage of Yongjie Zhou (周永杰) — PhD student at ielab, the University of Queensland, working on agent memory, agentic search, and information retrieval." />
 
   <link rel="icon" type="image/png" href="./assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap"
     rel="stylesheet"
   />
   <link
@@ -28,7 +28,7 @@
       --muted:    #888888;
       --rule:     #e0e0e0;
       --link:     #1772d0;
-      --maxw:     860px;
+      --maxw:     1100px;
       --pad:      clamp(16px, 4vw, 40px);
     }
 
@@ -104,7 +104,7 @@
     }
     .hero-affil a { color: var(--text); }
     .hero-bio {
-      font-size: 15px; color: var(--text);
+      font-size: 15px; color: var(--text); max-width: 720px;
       margin-bottom: 16px;
     }
     .hero-bio p { margin: 0 0 0.6em; }
@@ -132,25 +132,31 @@
     /* ── News ── */
     .news-list { list-style: none; padding: 0; margin: 0; }
     .news-item {
-      display: grid; grid-template-columns: 86px 1fr;
-      gap: 12px; padding: 7px 0;
-      font-size: 14px;
+      display: grid; grid-template-columns: 90px 1fr;
+      gap: 16px; padding: 9px 0;
+      font-size: 14px; line-height: 1.55;
+      border-top: 1px solid #f2f2f2;
     }
-    .news-date { color: var(--muted); font-size: 13px; padding-top: 1px; }
+    .news-item:first-child { border-top: none; }
+    .news-date {
+      color: var(--text); font-size: 13px; font-weight: 600;
+      font-variant-numeric: tabular-nums; padding-top: 1px;
+    }
     .news-text { color: var(--soft); }
     .news-text strong { color: var(--text); }
+    .news-text em { font-style: italic; color: var(--text); }
     @media (max-width: 440px) { .news-item { grid-template-columns: 1fr; gap: 1px; } }
 
     /* ── Publications ── */
     .pub-year-h {
-      font-size: 13px; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.08em;
-      margin: 20px 0 0; padding-bottom: 5px;
+      font-size: 14px; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.06em;
+      margin: 22px 0 2px; padding-bottom: 6px;
       border-bottom: 1px solid var(--rule);
     }
     .pub-year-h:first-of-type { margin-top: 0; }
     .pub {
-      display: flex; gap: 28px;
+      display: flex; gap: 20px;
       padding: 14px 0; border-top: 1px solid #f2f2f2;
       align-items: flex-start;
     }
@@ -167,11 +173,29 @@
     .pub-title { font-weight: 600; font-size: 14px; line-height: 1.4; margin-bottom: 3px; }
     .pub-authors { font-size: 13px; color: var(--soft); margin-bottom: 2px; }
     .pub-authors .me { font-weight: 600; color: var(--text); }
-    .pub-venue { font-size: 13px; color: var(--soft); font-style: italic; margin-bottom: 6px; }
-    .pub-chips { display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; }
-    .pub-chips a { color: var(--link); }
+    .pub-venue { font-size: 13px; color: var(--soft); font-style: italic; margin-bottom: 5px; }
+    .pub-venue strong { color: var(--text); font-weight: 600; }
+    .pub-chips { display: flex; flex-wrap: wrap; font-size: 13px; }
+    .pub-chips a, .pub-chips button {
+      font: inherit; font-size: 13px; color: var(--link);
+      background: none; border: none; padding: 0; cursor: pointer;
+    }
+    .pub-chips a:hover, .pub-chips button:hover { text-decoration: underline; }
+    .pub-chips button[aria-expanded="true"] { font-weight: 600; }
+    .pub-chips > * + *::before { content: "/"; color: #ccc; margin: 0 8px; font-weight: 400; display: inline-block; }
+    .pub-panel {
+      position: relative; margin-top: 10px; padding: 12px 14px;
+      background: #f7f8fa; border-left: 3px solid #2b5797; border-radius: 0 4px 4px 0;
+      font-size: 13px; line-height: 1.6; color: var(--soft);
+    }
+    .pub-panel p { margin: 0; text-align: justify; }
+    .pub-panel pre {
+      margin: 0; font-size: 12px; line-height: 1.5;
+      white-space: pre-wrap; word-break: break-word;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text);
+    }
     @media (max-width: 500px) {
-      .pub { flex-direction: column; gap: 10px; }
+      .pub { flex-direction: column; gap: 8px; }
       .pub-thumb { width: 100%; height: auto; }
     }
 
@@ -224,8 +248,9 @@
 
     /* ── Footer ── */
     footer {
-      max-width: var(--maxw); margin: 24px auto 0;
-      padding: 20px var(--pad) 48px;
+      width: calc(100% - 2 * var(--pad));
+      max-width: calc(var(--maxw) - 2 * var(--pad)); margin: 24px auto 0;
+      padding: 20px 0 48px;
       border-top: 1px solid var(--rule);
       font-size: 13px; color: var(--muted);
       display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
@@ -271,7 +296,7 @@
             I previously completed my Master's degree from the University of Queensland.
           </p>
           <p>
-            My research focuses on Agent Memory and Agent Information Retrieval.
+            My research focuses on agent memory, agentic search, and information retrieval.
           </p>
         </div>
 
@@ -296,12 +321,20 @@
     <h2 class="sec-h">News</h2>
     <ul class="news-list">
       <li class="news-item">
+        <div class="news-date">Oct 2026</div>
+        <div class="news-text">New preprint <em>Do Conversational Agents Need Explicit Memory?</em> released on arXiv. <a href="https://arxiv.org/abs/2610.24671" target="_blank" rel="noopener">[Paper]</a></div>
+      </li>
+      <li class="news-item">
+        <div class="news-date">Oct 2026</div>
+        <div class="news-text"><em>Reproducing LightMem</em> accepted to <strong>SIGIR-AP 2026</strong>. <a href="https://arxiv.org/abs/2607.29104" target="_blank" rel="noopener">[Paper]</a></div>
+      </li>
+      <li class="news-item">
         <div class="news-date">Jul 2026</div>
-        <div class="news-text">Presented our chunking taxonomy paper at <strong>SIGIR 2026</strong> in Melbourne.</div>
+        <div class="news-text">Presented <em>Beyond Chunk-Then-Embed</em> at <strong>SIGIR 2026</strong> in Melbourne. <a href="./assets/slides/2026-sigir-chunking.pdf" target="_blank" rel="noopener">[Slides]</a></div>
       </li>
       <li class="news-item">
         <div class="news-date">Apr 2026</div>
-        <div class="news-text">Paper accepted to <strong>SIGIR 2026</strong>.</div>
+        <div class="news-text"><em>Beyond Chunk-Then-Embed</em> accepted to <strong>SIGIR 2026</strong>. <a href="https://dl.acm.org/doi/10.1145/3805712.3808575" target="_blank" rel="noopener">[Paper]</a></div>
       </li>
     </ul>
   </section>
@@ -311,21 +344,54 @@
     <h2 class="sec-h">Publications</h2>
     <!-- Tip: wrap your own name in <span class="me">Yongjie Zhou</span> -->
 
+    <h3 class="pub-year-h">2026</h3>
+
     <div class="pub">
-      <div class="pub-thumb">
-        <img src="./assets/papers/2026-sigir-chunking.png" alt="Chunking taxonomy figure">
+      <div>
+        <div class="pub-title">Do Conversational Agents Need Explicit Memory? A Controlled Comparison with Raw-History Retrieval</div>
+        <div class="pub-authors">
+          <span class="me">Yongjie Zhou</span>, Shuai Wang, Bevan Koopman, Guido Zuccon
+        </div>
+        <div class="pub-venue">arXiv preprint, 2026</div>
+        <div class="pub-chips">
+          <a href="https://arxiv.org/pdf/2610.24671" target="_blank" rel="noopener">PDF</a>
+          <a href="https://github.com/ielab/memory-systems-vs-rag" target="_blank" rel="noopener">Code</a>
+          <button type="button" class="pub-toggle" data-panel="abs">Abs</button>
+        </div>
+        <div class="pub-panel" data-panel="abs" hidden><p>Explicit memory systems transform conversation history into persistent representations intended to improve future access, often at substantial construction cost. Yet it remains unclear whether this added complexity yields better answer accuracy than retrieving directly from raw history. This study compares six state-of-the-art explicit memory systems with raw-history RAG on LongMemEval-S and BEAM-100K under original and controlled retrieval settings. We find only localized gains for particular question types and tight run-time context budgets, with no consistent advantage over strong raw-history RAG baselines. Oracle retrieval shows that some systems fail to preserve answer-supporting information during explicit memory construction, while others preserve it but fail to retrieve it effectively, despite construction costs reaching hours per conversation. Our findings suggest that while many existing memory systems for AI agents emphasize increasingly elaborate explicit memory construction, they are often evaluated without strong controlled comparisons to raw-history RAG and may underemphasize retrieval. Retrieval remains a major bottleneck when useful information is preserved, suggesting that improving access to existing information may be at least as important as constructing richer explicit memory.</p></div>
       </div>
+    </div>
+
+    <div class="pub">
+      <div>
+        <div class="pub-title">Reproducing LightMem: When Does Memory Construction Help Over Raw-Turn Retrieval?</div>
+        <div class="pub-authors">
+          <span class="me">Yongjie Zhou</span>, Shuai Wang, Bevan Koopman, Guido Zuccon
+        </div>
+        <div class="pub-venue"><strong>SIGIR-AP 2026</strong></div>
+        <div class="pub-chips">
+          <a href="https://arxiv.org/pdf/2607.29104" target="_blank" rel="noopener">PDF</a>
+          <a href="https://github.com/ielab/Reproducing-LightMem" target="_blank" rel="noopener">Code</a>
+          <button type="button" class="pub-toggle" data-panel="abs">Abs</button>
+        </div>
+        <div class="pub-panel" data-panel="abs" hidden><p>Long-term conversational agents require access to information from earlier interactions, such as a user's preferences, past requests, or previously mentioned facts. Repeatedly providing the full dialogue history can be expensive as conversations grow, so many memory approaches instead transform past interactions into compact entries that can be retrieved when needed. LightMem is a recent lightweight memory-management approach that reports strong effectiveness while maintaining relatively low construction cost. However, it still relies on a separate constructed memory representation and is evaluated with only one retriever, leaving unclear how sensitive its results are to retriever choice and whether memory construction provides sufficient benefits over retrieving directly from raw turns. In this study, we reproduce LightMem and compare it with Naive RAG, which retrieves directly from raw user turns. We recover LightMem's main configuration trend, but find that retriever choice substantially affects answer accuracy: changing only the retriever over a fixed LightMem store shifts answer accuracy from 58.1% to 75.5%. Retrieval over constructed memory also does not consistently outperform raw-turn retrieval. At matched retrieval depths, Naive RAG generally achieves higher answer accuracy, whereas LightMem has an advantage under tight answering-token budgets. Oracle-reference evaluation further suggests that memory construction may omit or alter answer-relevant information. Overall, LightMem provides a conditional context-efficiency advantage rather than a consistent answer accuracy advantage over Naive RAG. Strong retrieval over raw turns can match or outperform constructed memory as the answering-token budget increases, motivating future work on retrieval, reranking, query formulation, and their interaction with raw-turn and constructed memory representations.</p></div>
+      </div>
+    </div>
+
+    <div class="pub">
       <div>
         <div class="pub-title">Beyond Chunk-Then-Embed: A Comprehensive Taxonomy and Evaluation of Document Chunking Strategies for Information Retrieval</div>
         <div class="pub-authors">
           <span class="me">Yongjie Zhou</span>*, Shuai Wang*, Bevan Koopman, Guido Zuccon <span style="font-size:12px;color:var(--muted)">(*equal contribution)</span>
         </div>
-        <div class="pub-venue">SIGIR 2026 </div>
+        <div class="pub-venue"><strong>SIGIR 2026</strong></div>
         <div class="pub-chips">
-          <a href="https://dl.acm.org/doi/pdf/10.1145/3805712.3808575" target="_blank" rel="noopener">[PDF]</a>
-          <a href="https://github.com/ielab/Reproduce-chunking-2026" target="_blank" rel="noopener">[Code]</a>
-          <a href="./assets/slides/2026-sigir-chunking.pdf" target="_blank" rel="noopener">[Slides]</a>
+          <a href="https://dl.acm.org/doi/pdf/10.1145/3805712.3808575" target="_blank" rel="noopener">PDF</a>
+          <a href="https://github.com/ielab/Reproduce-chunking-2026" target="_blank" rel="noopener">Code</a>
+          <a href="./assets/slides/2026-sigir-chunking.pdf" target="_blank" rel="noopener">Slides</a>
+          <button type="button" class="pub-toggle" data-panel="abs">Abs</button>
         </div>
+        <div class="pub-panel" data-panel="abs" hidden><p>Document chunking is a critical preprocessing step in dense retrieval systems, yet the design space of chunking strategies remains poorly understood. Recent research has proposed several concurrent approaches, including LLM-guided methods (e.g., DenseX and LumberChunker) and contextualized strategies (e.g., Late Chunking), which generate embeddings before segmentation to preserve contextual information. However, these methods emerged independently and were evaluated on benchmarks with minimal overlap, making direct comparisons difficult. This paper reproduces prior studies in document chunking and presents a systematic framework that unifies existing strategies along two key dimensions: (1) segmentation methods, including structure-based methods (fixed-size, sentence-based, and paragraph-based) as well as semantically-informed and LLM-guided methods; and (2) embedding paradigms, which determine the timing of chunking relative to embedding (pre-embedding chunking vs. contextualized chunking). Our reproduction evaluates these approaches in two distinct retrieval settings established in previous work: in-document retrieval (needle-in-a-haystack) and in-corpus retrieval (the standard information retrieval task). Our comprehensive evaluation reveals that optimal chunking strategies are task-dependent: simple structure-based methods outperform LLM-guided alternatives for in-corpus retrieval, while LumberChunker performs best for in-document retrieval. Contextualized chunking improves in-corpus effectiveness but degrades in-document retrieval. We also find that chunk size correlates moderately with in-document but weakly with in-corpus effectiveness, suggesting segmentation method differences are not purely driven by chunk size.</p></div>
       </div>
     </div>
 
@@ -406,8 +472,27 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <span>© 2026 Yongjie Zhou. Last updated August 2026.</span>
+  <span>© 2026 Yongjie Zhou. Last updated October 2026.</span>
 </footer>
+
+<script>
+  // Abs toggle: show / hide the abstract
+  document.querySelectorAll('.pub').forEach(function (pub) {
+    var btns = pub.querySelectorAll('.pub-toggle');
+    btns.forEach(function (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function () {
+        var opening = btn.getAttribute('aria-expanded') !== 'true';
+        btns.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+        pub.querySelectorAll('.pub-panel').forEach(function (p) { p.hidden = true; });
+        if (opening) {
+          btn.setAttribute('aria-expanded', 'true');
+          pub.querySelector('.pub-panel[data-panel="' + btn.dataset.panel + '"]').hidden = false;
+        }
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
